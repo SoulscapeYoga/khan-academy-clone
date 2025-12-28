@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Academy Clone - Learn Anything</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <h1>📚 Academy</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#upload" class="nav-link">Upload Content</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Learn Anything, Anytime</h1>
+            <p>Free educational content for learners of all ages</p>
+            <button class="cta-button" onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'})">Explore Courses</button>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <h2>Featured Courses</h2>
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Courses will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Detail Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="course-detail">
+                <h2 id="courseTitle"></h2>
+                <p id="courseDescription"></p>
+                <div class="lessons-container" id="lessonsContainer">
+                    <!-- Lessons will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Content Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2>Upload Your Content</h2>
+            <div class="upload-container">
+                <div class="upload-form">
+                    <h3>Create New Course</h3>
+                    <form id="courseForm">
+                        <input type="text" id="courseName" placeholder="Course Name" required>
+                        <textarea id="courseDesc" placeholder="Course Description" rows="4" required></textarea>
+                        <button type="submit" class="upload-btn">Create Course</button>
+                    </form>
+                </div>
+
+                <div class="upload-form">
+                    <h3>Add Lesson to Course</h3>
+                    <form id="lessonForm">
+                        <select id="courseSelect" required>
+                            <option value="">Select a Course</option>
+                        </select>
+                        <input type="text" id="lessonTitle" placeholder="Lesson Title" required>
+                        <textarea id="lessonContent" placeholder="Lesson Content (text, description, etc.)" rows="6" required></textarea>
+                        <input type="file" id="lessonFile" accept=".pdf,.mp4,.jpg,.png,.docx,.txt" placeholder="Upload file (optional)">
+                        <small>Supported: PDF, MP4, JPG, PNG, DOCX, TXT</small>
+                        <button type="submit" class="upload-btn">Add Lesson</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="uploaded-content">
+                <h3>Your Content</h3>
+                <div id="contentList" class="content-list">
+                    <!-- Uploaded content will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About This Platform</h2>
+            <p>This is a modern learning platform inspired by Khan Academy, designed to help educators share content and students learn at their own pace. Upload your courses, create lessons, and build a thriving learning community.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Academy Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
